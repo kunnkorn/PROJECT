@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.3.5/sweetalert2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // const Member = [{
+            //     "ID" : "6231302003", "ID" : "6231302005", "ID" : "6231302020", "ID" : "6231302024",
+            //     "Name" : "Earth", "Name" : "Aim", "Name" : "Baitoey", "Name" : "Korn"
+            // }]
+            const member_name =["Earth", "AumAim", "Baitoey", "Korn"]
+            const member_ID = [6231302003, 6231302006, 6231302020,6231302024]
+            
+                $("#btnSearch").click(function(){
+                    var search = $("#inputSearch").val();
+                    for(let i=0; i<member_ID.length;i++){
+                        if(search == member_ID[i]){
+                            alert("Member is " + member_name[i])
+                        break;      
+                        }
+                        else if(search == ""){
+                            // $(".alert").show();
+                            $(".alert").show();
+                        }
+                        
+            }
+                })
+            
+            
+        });
+    </script>
+</head>
+<body>
+   
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="INDEX.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">ABOUT</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="search.html">SEARCH <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="score.html">SCORE <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" id="inputSearch">
+                <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId" id="btnSearch">
+            Launch
+            </button>
+    </nav>
+    <div class="alert alert-danger" mt-3 style="display: none">
+        <strong>Error</strong> Your ID is misinput!
+    </div>
+</body>
+</html>
