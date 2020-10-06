@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.3.5/sweetalert2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var member = [
+                {"ID":"6231302003","Name":"Earth"},
+                {"ID":"6231302006","Name":"Aumaim"},
+                {"ID":"6231302020","Name":"Baitoey"},
+                {"ID":"6231302024","Name":"Korn"}];
+
+                let data = "<thead><tr><th>ID</th> <th>Name</th></tr></thead>";
+
+                $.each(member,function(index,value){
+                    data += "<tr><td>"+value.ID + "</td> <td>"+value.Name + "</td></tr>"
+                })
+                $("table").html(data);
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid" >
+        <h1 >Member</h1>
+        <table class="table table-striped mt-2 " >  </table>
+
+    </div>
+</body>
+</html>
