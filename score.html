@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="INDEX.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="search.html">SEARCH <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="score.html">SCORE <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Score</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">6231302003</th>
+            <th>Earth</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score1">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+            </th>            
+          </tr>
+
+          <tr>
+            <th scope="row">6231302006</th>
+            <th>Aumaim</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score2">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                
+                  </div>
+            </th>            
+          </tr>
+
+          <tr>
+            <th scope="row">6231302020</th>
+            <th>Baitoey</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score3">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+            </th>            
+            
+          </tr>
+
+          <tr>
+            <th scope="row">6231302024</th>
+            <th>Korn</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score4">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+            </th>          
+            
+          </tr>       
+
+
+
+          
+         
+        </tbody>
+      </table>
+      &nbsp;&nbsp; <button class="btn btn-primary" id="btsubmit">Submit</button>
+      <br><br>
+     <h4 id="show"> &nbsp;&nbsp;Average score</p>
+
+      <script>
+        $(document).ready(function(){
+            $("#btsubmit").click(function(){
+            var element = document.querySelector("#score1");            
+            var score1 = parseFloat(element.options[element.selectedIndex].value);
+            var element = document.querySelector("#score2");            
+            var score2 = parseFloat(element.options[element.selectedIndex].value);
+            var element = document.querySelector("#score3");            
+            var score3 = parseFloat(element.options[element.selectedIndex].value);
+            var element = document.querySelector("#score4");            
+            var score4 = parseFloat(element.options[element.selectedIndex].value);
+
+                totalscore =(score1+score2+score3+score4)/4;
+                document.querySelector("#show").innerHTML = "&nbsp;&nbsp;Average score = " + totalscore.toFixed(2);
+
+            })
+        })
+    </script>
+</body>
+</html>
