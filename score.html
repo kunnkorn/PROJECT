@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    
+</head>
+<body>
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Score</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">6231302003</th>
+            <th>Earth</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score1">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+            </th>            
+          </tr>
+
+          <tr>
+            <th scope="row">6231302006</th>
+            <th>Aumaim</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score2">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                
+                  </div>
+            </th>            
+          </tr>
+
+          <tr>
+            <th scope="row">6231302020</th>
+            <th>Baitoey</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score3">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+            </th>            
+            
+          </tr>
+
+          <tr>
+            <th scope="row">6231302024</th>
+            <th>Korn</th>            
+            <th>
+                <div class="dropdown">
+                    <select id="score4">
+                        <option value="0">Score</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+            </th>          
+            
+          </tr>       
+
+
+
+          
+         
+        </tbody>
+      </table>
+      &nbsp;&nbsp; <button class="btn btn-primary" id="btsubmit">Submit</button>
+      <br><br>
+     <h4 id="show"> &nbsp;&nbsp;Average score</p>
+
+      <script>
+        $(document).ready(function(){
+            $("#btsubmit").click(function(){
+            var element = document.querySelector("#score1");            
+            var score1 = parseFloat(element.options[element.selectedIndex].value);
+            var element = document.querySelector("#score2");            
+            var score2 = parseFloat(element.options[element.selectedIndex].value);
+            var element = document.querySelector("#score3");            
+            var score3 = parseFloat(element.options[element.selectedIndex].value);
+            var element = document.querySelector("#score4");            
+            var score4 = parseFloat(element.options[element.selectedIndex].value);
+
+                totalscore =(score1+score2+score3+score4)/4;
+                document.querySelector("#show").innerHTML = "&nbsp;&nbsp;Average score = " + totalscore.toFixed(2);
+
+            })
+        })
+    </script>
+</body>
+</html>
